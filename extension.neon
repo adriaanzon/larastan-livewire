@@ -1,3 +1,6 @@
+parameters:
+  stubFiles:
+    - stubs/InteractsWithProperties.stub
 services:
   - class: CalebDW\LarastanLivewire\Properties\ComputedPropertyExtension
     tags: [phpstan.broker.propertiesClassReflectionExtension]

@@ -1,0 +1,59 @@
+<?php
+
+namespace Livewire\Concerns;
+
+trait InteractsWithProperties
+{
+    /**
+     * @param string $prop
+     * @return bool
+     */
+    public function hasProperty($prop);
+
+    /**
+     * @param string $name
+     * @return mixed
+     */
+    public function getPropertyValue($name);
+
+    /**
+     * @param array<string, mixed>|\Illuminate\Database\Eloquent\Model $values
+     * @return void
+     */
+    public function fill($values);
+
+    /**
+     * @param array<string>|string ...$properties
+     * @return void
+     */
+    public function reset(...$properties);
+
+    /**
+     * @param array<string>|string ...$properties
+     * @return void
+     */
+    protected function resetExcept(...$properties);
+
+    /**
+     * @param array<string>|string|null $properties
+     * @return ($properties is string ? mixed : array<string, mixed>)
+     */
+    public function pull($properties = null);
+
+    /**
+     * @param array<string>|string $properties
+     * @return array<string, mixed>
+     */
+    public function only($properties);
+
+    /**
+     * @param array<string>|string $properties
+     * @return array<string, mixed>
+     */
+    public function except($properties);
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function all();
+}
